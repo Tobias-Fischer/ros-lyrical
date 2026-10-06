@@ -1,0 +1,18 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v0.1.9
+_src_path: gh:Tobias-Fischer/ros-distro-template
+channel_name: robostack-lyrical
+conda_forge_migrations:
+- elfutils0196
+- giflib6
+- go_macos
+- gstreamer128
+- hdf52
+- libboost190
+- proj99
+- urdfdom6
+- vtk970
+conda_forge_pinning_version: 2026.09.25.23.22.04
+distro: lyrical
+pinning_overrides: {}
+upload_target: prefix

@@ -1,3 +1,6 @@
+# This file is generated from ros-distro-template (template/robostack.yaml).
+# If you change it here, upstream the change: comment `@robostack-bot upstream-to-template` on your PR.
+
 # TODO
 # python3-babeltrace:
 #   robostack: [babeltrace]
@@ -26,8 +29,6 @@ autoconf:
   robostack: [autoconf]
 automake:
   robostack: [automake]
-python3-transforms3d:
-  robostack: [transforms3d]
 avahi-daemon:
   robostack: [python-avahi]
 benchmark:
@@ -39,6 +40,8 @@ binutils:
     win64: []
 bison:
   robostack: [bison]
+black:
+  robostack: [black]
 boost:
   robostack: [libboost-devel, libboost-python-devel]
 bullet:
@@ -49,11 +52,6 @@ ca-certificates:
   robostack: [ca-certificates]
 cargo:
   robostack: [rust]
-chrony:
-  robostack:
-    linux: [chrony]
-    osx: [chrony]
-    win64: []
 clang-format:
   robostack: [clang-format]
 clang-tidy:
@@ -92,7 +90,7 @@ doxygen:
 draco:
   robostack: [draco]
 eigen:
-  robostack: [eigen]
+  robostack: [eigen, eigen-abi-devel]
 emacs:
   robostack: [emacs]
 festival:
@@ -104,11 +102,11 @@ ffmpeg:
   robostack: [ffmpeg]
 ffmpeg-dev:
   robostack: [ffmpeg]
-# This is not available on Windows, and it is only
-# required by libcurl_vendor (see https://index.ros.org/d/file/)
-# but it is not actually used if libcurl is not compiled,
-# so we can just ignore it on Windows.
 file:
+  # This is not available on Windows, and it is only
+  # required by libcurl_vendor (see https://index.ros.org/d/file/)
+  # but it is not actually used if libcurl is not compiled,
+  # so we can just ignore it on Windows.
   robostack:
     linux: [file]
     osx: [file]
@@ -119,6 +117,8 @@ flex:
   robostack: [flex]
 fmt:
   robostack: [fmt]
+fri_client_sdk:
+  robostack: [lbr-fri-client-sdk]
 g++-static:
   robostack: []
 gawk:
@@ -180,9 +180,17 @@ ignition-gazebo3:
 ignition-gazebo5:
   robostack: [libignition-gazebo5]
 ignition-gazebo6:
-  robostack: [libignition-gazebo6]
+  robostack:
+    linux: [libignition-gazebo6, libgl-devel]
+    osx: [libignition-gazebo6]
+    win64: [libignition-gazebo6]
 ignition-gui5:
   robostack: [libignition-gui5]
+ignition-gui6:
+  robostack:
+    linux: [libignition-gui6, libgl-devel]
+    osx: [libignition-gui6]
+    win64: [libignition-gui6]
 ignition-math6:
   robostack: [libignition-math6]
 ignition-msgs5:
@@ -191,6 +199,8 @@ ignition-msgs7:
   robostack: [libignition-msgs7]
 ignition-msgs8:
   robostack: [libignition-msgs8]
+ignition-plugin:
+  robostack: [libignition-plugin1]
 ignition-rendering5:
   robostack: [libignition-rendering5]
 ignition-transport10:
@@ -207,6 +217,8 @@ jupyter-notebook:
   robostack: [notebook]
 kitchen:
   robostack: [kitchen]
+konsole:
+  robostack: [konsole]
 lcov:
   robostack: [lcov]
 leveldb:
@@ -215,9 +227,15 @@ libabsl-dev:
   robostack: [libabseil]
 libblas-dev:
   robostack: [libblas, libcblas]
+libblosc-dev:
+  robostack: [blosc]
 libboost:
   robostack: [libboost]
 libboost-chrono-dev:
+  robostack: [libboost-devel]
+libboost-coroutine:
+  robostack: [libboost]
+libboost-coroutine-dev:
   robostack: [libboost-devel]
 libboost-date-time:
   robostack: [libboost]
@@ -272,6 +290,8 @@ libclang-dev:
   robostack: [libclang]
 libconsole-bridge-dev:
   robostack: [console_bridge]
+libcpp-httplib-dev:
+  robostack: [cpp-httplib]
 libcunit-dev:
   robostack: [cunit]
 libcurl:
@@ -279,7 +299,10 @@ libcurl:
 libcurl-dev:
   robostack: [libcurl]
 libdc1394-dev:
-  robostack: [libdc1394]
+  robostack:
+    linux: [libdc1394]
+    osx: [libdc1394]
+    win64: []
 libdraco-dev:
   robostack: [draco]
 libdw-dev:
@@ -289,6 +312,8 @@ libdw-dev:
     win64: []
 libexpected-dev:
   robostack: [cpp-expected]
+libfcl:
+  robostack: [fcl]
 libfcl-dev:
   robostack: [fcl]
 libffi-dev:
@@ -336,6 +361,11 @@ libgpgme-dev:
   robostack:
     linux: [gpgme]
     osx: [gpgme]
+    win64: []
+libgpiod-dev:
+  robostack:
+    linux: [libgpiod]
+    osx: []
     win64: []
 libgps:
   robostack: [gpsd]
@@ -389,6 +419,8 @@ libnlopt-dev:
   robostack: [nlopt]
 libnlopt0:
   robostack: [nlopt]
+liboctomap-dev:
+  robostack: [octomap]
 libogg:
   robostack: [libogg]
 libogre:
@@ -417,8 +449,12 @@ libopencv-imgproc-dev:
     linux: [py-opencv, libopencv, libopengl-devel, libgl-devel]
     osx: [py-opencv, libopencv]
     win64: [py-opencv, libopencv]
+libopenexr-dev:
+  robostack: [openexr]
 libopenni-dev:
   robostack: []
+libopenvdb-dev:
+  robostack: [openvdb]
 liborocos-kdl:
   robostack: [orocos-kdl]
 liborocos-kdl-dev:
@@ -432,6 +468,18 @@ libpcl-all-dev:
     linux: [pcl, libboost-devel, vtk-base, libopengl-devel, libgl-devel, eigen-abi-devel]
     osx: [pcl, libboost-devel, vtk-base, eigen-abi-devel]
     win64: [pcl, libboost-devel, vtk-base, eigen-abi-devel]
+libpcl-common:
+  robostack: [pcl]
+libpcl-features:
+  robostack: [pcl]
+libpcl-filters:
+  robostack: [pcl]
+libpcl-io:
+  robostack: [pcl]
+libpcl-segmentation:
+  robostack: [pcl]
+libpcl-surface:
+  robostack: [pcl]
 libpng-dev:
   robostack: [libpng]
 libpoco-dev:
@@ -668,6 +716,8 @@ lz4:
   robostack: [lz4]
 maven:
   robostack: [maven]
+meson:
+  robostack: [meson]
 mongodb:
   robostack: [mongodb]
 mosquitto:
@@ -796,7 +846,7 @@ python-pydot:
 python-pygithub3:
   robostack: [pygithub]
 python-pygraphviz:
-  robostack: [pygraphviz]
+  robostack: [graphviz, pygraphviz]
 python-pyusb-pip:
   robostack: [pyusb]
 python-qt5-bindings:
@@ -835,6 +885,8 @@ python3:
   robostack: [python]
 python3-argcomplete:
   robostack: [argcomplete]
+python3-attrs:
+  robostack: [attrs]
 python3-autobahn:
   robostack: [autobahn]
 python3-bson:
@@ -917,6 +969,8 @@ python3-grpcio:
   robostack: [grpcio]
 python3-h5py:
   robostack: [h5py]
+python3-httpx:
+  robostack: [httpx]
 python3-ifcfg:
   robostack: [ifcfg]
 python3-imageio:
@@ -972,6 +1026,8 @@ python3-pip:
   robostack: [pip]
 python3-pkg-resources:
   robostack: []
+python3-platformdirs:
+  robostack: [platformdirs]
 python3-prompt-toolkit:
   robostack: [prompt-toolkit]
 python3-protobuf:
@@ -989,7 +1045,7 @@ python3-pydantic:
 python3-pydot:
   robostack: [pydot]
 python3-pygraphviz:
-  robostack: [pygraphviz]
+  robostack: [graphviz, pygraphviz]
 python3-pykdl:
   robostack: [python-orocos-kdl]
 python3-pymongo:
@@ -1034,6 +1090,8 @@ python3-ruff:
   robostack: [ruff]
 python3-scipy:
   robostack: [scipy]
+python3-semver:
+  robostack: [semver]
 python3-serial:
   robostack: [pyserial]
 python3-setproctitle:
@@ -1056,16 +1114,32 @@ python3-termcolor:
   robostack: [termcolor]
 python3-texttable:
   robostack: [texttable]
+python3-textual:
+  robostack: [textual]
 python3-tk:
   robostack: [tk]
+python3-toml:
+  robostack: [toml]
+python3-torchvision:
+  robostack: [torchvision]
+python3-torchvision-pip:
+  robostack: [torchvision]
 python3-tornado:
   robostack: [tornado]
+python3-tqdm:
+  robostack: [tqdm]
+python3-transforms3d:
+  robostack: [transforms3d]
 python3-twisted:
   robostack: [twisted]
 python3-typeguard:
   robostack: [typeguard]
 python3-typing-extensions:
   robostack: [typing_extensions]
+python3-ujson:
+  robostack: [ujson]
+python3-ultralytics-pip:
+  robostack: [ultralytics]
 python3-unidiff:
   robostack: [unidiff]
 python3-usb:
@@ -1074,16 +1148,28 @@ python3-utm:
   robostack: [utm]
 python3-uvicorn:
   robostack: [uvicorn]
+python3-uvloop:
+  robostack:
+    linux: [uvloop]
+    osx: [uvloop]
+    win64: []
 python3-vcstool:
   robostack: [vcs2l]
 python3-venv:
   robostack: [virtualenv, pip, pip-tools, setuptools]
 python3-websocket:
   robostack: [websocket-client]
+python3-websockets:
+  robostack: [websockets]
 python3-yaml:
   robostack: [pyyaml]
 python3-zmq:
   robostack: [pyzmq]
+qml-module-qtquick-extras:
+  robostack:
+    linux: [qt6-main, libopengl-devel, libgl-devel]
+    osx: [qt6-main]
+    win64: [qt6-main]
 qt-base-dev:
   robostack:
     linux: [qt6-main, libopengl-devel, libgl-devel]
@@ -1121,6 +1207,8 @@ rsync:
   robostack: [rsync]
 rti-connext-dds-5.3.1:
   robostack: []
+rti-connext-dds-6.0.1:
+  robostack: []
 ruby:
   robostack: [ruby]
 sbcl:
@@ -1140,6 +1228,8 @@ sdl-image:
   robostack: [sdl_image]
 sdl2:
   robostack: [sdl2]
+simde:
+  robostack: [simde]
 smartmontools:
   robostack: [smartmontools]
 socat:
@@ -1189,7 +1279,7 @@ unzip:
 uuid:
   robostack:
     linux: [libuuid]
-    osx: []  # macOS has a native UUID implementation which is preferred
+    osx: []
     win64: []
 virtualenv:
   robostack: [virtualenv]
@@ -1209,7 +1299,7 @@ x11-dev:
 xsimd:
   robostack: [xsimd]
 xtensor:
-  robostack: [xtensor ==0.24.7]
+  robostack: [xtensor]
 yaml:
   robostack: [yaml, yaml-cpp]
 yaml-cpp:
