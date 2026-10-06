@@ -1,3 +1,8 @@
+<!--
+This file is generated from ros-distro-template (template/README.md.jinja).
+If you change it here, upstream the change: comment `@robostack-bot upstream-to-template` on your PR.
+-->
+
 # RoboStack (for ROS lyrical)
 
 [![Conda](https://img.shields.io/conda/dn/robostack-lyrical/ros-lyrical-desktop?style=flat-square)](https://anaconda.org/robostack/)

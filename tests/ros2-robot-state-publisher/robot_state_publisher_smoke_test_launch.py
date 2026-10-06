@@ -1,3 +1,7 @@
+# This file is generated from ros-distro-template (template/tests/ros2-robot-state-publisher/robot_state_publisher_smoke_test_launch.py).
+# If you change it here, upstream the change: comment `@robostack-bot upstream-to-template` on your PR.
+
+import re
 import sys
 import unittest
 
@@ -45,9 +49,10 @@ def generate_test_description():
 class TestRobotStatePublisher(unittest.TestCase):
 
     def test_node_output(self, proc_output):
-        # Lyrical reports successful URDF parsing with this message.
+        # robot_state_publisher logs "Robot initialized" once the URDF is loaded
+        # (older releases, e.g. humble, log "got segment ..." for each link instead).
         proc_output.assertWaitFor(
-            expected_output="Robot initialized", timeout=10, stream='stderr'
+            expected_output=re.compile("Robot initialized|got segment"), timeout=10, stream='stderr'
         )
 
     def test_parameter_service(self):
